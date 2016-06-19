@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+        <!-- Download Section -->
+        <section id="download" class="content-section text-center">
+            <div class="download-section">
+                <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Multimedia Files</h2>
+                        <p>Silahkan Dengarkan Dendang Musik dibawah ini</p>
+
+                            <div>
+                                <p>Coldplay- Paradise</p>
+                                <audio id="coldplay" controls>
+                                    <source src="/multimedia/Coldplay_Paradise.ogg" type="audio/ogg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </div>
+
+                            <div>
+                                <p> Blackout - selalu ada</p>
+                                <audio  id=" blackout" controls>
+                                    <source src="/multimedia/selalu ada.ogg" type="audio/ogg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </div>
+
+                            <div>
+                                <p> The rain - Sepajang Jalan Kenangan</p>
+                                <audio  id="rain" controls>
+                                    <source src="/multimedia/The rain - Sepanjang jalan kenangan.ogg" type="audio/ogg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div>
+         </section>
+    
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" >
+    // fungsi simpan(), ketika tombol diklik maka string 
+    // di dalam input akan tersimpan ke dalam storage browser
+    function simpan(){      
+        var storage = document.getElementById('nama').value;
+        localStorage.setItem('Text',storage);
+    } 
+    // tampil() akan menampilkan string yang tersimpan
+    // ke tag div yang ditentukan "hasil"
+    function tampil() {
+        var tampilNama = localStorage.getItem('Text');
+        if (tampilNama) {
+        x = document.getElementById('tampil');
+        x.innerHTML=tampilNama;
+        }
+    }
+    // fungsi untuk menghapus localstorage browser
+    function hapus() {
+        localStorage.removeItem('Text');
+    }
+    </script>
+
+    <style type="text/css">
+        nama{
+            color: black;
+
+        }
+
+    </style>
+    <section id="about" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <body>
+                        <h3> Isi Buku tamu nya Dong </h3>
+                        <input type="text" id="nama" placeholder="nama anda" />
+                        <input type="button" value="Simpan" onclick="simpan()" />
+                        <input type="button" value="Tampil" onclick="tampil()" />
+                        <input type="button" value="Hapus" onclick="hapus()" />
+                        <div id="tampil"></div>
+                    </body>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
